@@ -11,8 +11,8 @@ public class HomeAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("KhomeAction Start...");
-		return "main/home.jsp";
+		System.out.println("homeAction Start...");
+		return "WEB-INF/main/home.jsp";
 	}
 
 }
