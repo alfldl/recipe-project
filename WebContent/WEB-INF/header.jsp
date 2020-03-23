@@ -1,27 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>RECIPE</title>
-<link rel="stylesheet" type="text/css" href="css/common.css">
 <link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/footer.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
+
 </head>
+
 <body>
-<div id="wrap">
-<header>
-  <a href="index.html"><img id="logo" src="img/logo.png"></a>
-<nav id="top_menu">
-  HOME | LOGIN | JOIN | NOTICE
-</nav>
-<nav id="main_menu">
-  <ul>
-    <li><a href="#">S</a></li>
-    <li><a href="#">HOME</a></li>
-    <li><a href="#">RECIPE</a></li>
-    <li><a href="#">STORE</a></li>
-    <li><a href="#">COMMUNITY</a></li>
-  </ul>
-</nav>
-</header> <!-- header -->
+	<div id="wrap" >
+		<header>
+			<div id="con1">
+			<nav class="dropdown" style="float: right;">
+			<button class="dropbtn">HOME</button>
+				<div class="dropdown-content" >
+				<ul class="nav">
+					<a href="#">login</a>
+					<a href="#">Join</a>
+					<a href="#">notice</a>
+				</ul>
+				</div>
+			</nav>
+			<div id="navbar" > 
+			<ul>
+					<li><a href="index2.html">홈</a></li>
+					<li><a href="recipe.jsp">레시피</a></li>
+					<li><a href="#">게시판</a></li>
+					<li><a href="#">스토어</a></li>
+					<li><a href="#">냉장고</a></li>
+			</ul>
+			</div>
+			
+				
+				
+			</div>
+	
+		</header>

@@ -1,138 +1,140 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <%@ include file="../header.jsp" %>
-<aside>
-  <article id="login_box">
-    <img id="login_title" src="img/ttl_login.png">
-    <div id="input_button">
-    <ul id="login_input">
-      <li><input type="text"></li>
-      <li><input type="password"></li>
-    </ul>
-    <img id="login_btn" src="img/btn_login.gif">
-    </div> 
-    <div class="clear"></div>
-    <div id="join_search">
-      <img src="img/btn_join.gif">
-      <img src="img/btn_search.gif">
-    </div>
-  </article>
-  <article id="guestbook">
-    <div id="guestbook_title">
-      <img src="img/ttl_memo.gif">
-    </div>
-    <ul>
-      <li>안녕하세요!</li>
-      <li>안녕하세요!</li>
-      <li>안녕하세요!</li>
-      <li>안녕하세요!</li>
-    </ul>
-  </article>
-</aside>
 
-<section id="main">
-  <img src="img/main_img.png">
-  <section id="notice_free_youtube">
-    <article id="notice"> 	<!-- 공지사항 -->
-      <div class="latest_title">
-        <img class="latest_img" src="img/latest1.gif">
-        <img class="more" src="img/more.gif">
-        <div class="clear"></div>					
-      </div>
-      <div class="latest_content">
-        <img class="image" src="img/book_pen.gif">
-        <ul class="list">
-          <li>
-            <div class="subject">루바토 개편과 사이트 이용...</div>
-            <div class="date">2017-09-20</div>
-            <div class="clear"></div>	
-          </li>								
-          <li>
-            <div class="subject">루바토 개편과 사이트 이용...</div>
-            <div class="date">2017-09-20</div>
-            <div class="clear"></div>	
-          </li>		
-          <li>
-            <div class="subject">루바토 개편과 사이트 이용...</div>
-            <div class="date">2017-09-20</div>
-            <div class="clear"></div>	
-          </li>	
-          <li>
-            <div class="subject">루바토 개편과 사이트 이용...</div>
-            <div class="date">2017-09-20</div>
-            <div class="clear"></div>	
-          </li>				
-        </ul>							
-      </div>
-    </article>
-    <article id="free"> 	<!—자유 게시판 -->
-      <div class="latest_title">
-        <img class="latest_img" src="img/latest2.gif">
-        <img class="more" src="img/more.gif">
-        <div class="clear"></div>					
-      </div>
-      <div class="latest_content">
-        <img class="image" src="img/book_pen.gif">
-        <ul class="list">
-          <li>
-            <div class="subject">까스통님의 선물인 보드카...</div>
-            <div class="date">2017-09-20</div>
-            <div class="clear"></div>		
-          </li>
-          <li>
-            <div class="subject">까스통님의 선물인 보드카...</div>
-            <div class="date">2017-09-20</div>
-            <div class="clear"></div>	
-          </li>		
-          <li>
-            <div class="subject">까스통님의 선물인 보드카...</div>
-            <div class="date">2017-09-20</div>
-            <div class="clear"></div>	
-          </li>	
-          <li>
-            <div class="subject">까스통님의 선물인 보드카...</div>
-            <div class="date">2017-09-20</div>
-            <div class="clear"></div>	
-          </li>								
-        </ul>							
-      </div>
-    </article>			
-    <article id="youtube">	    <!—YOUTUBE 동영상 -->		
-      <div class="latest_title">
-        <img class="latest_img" src="img/latest3.gif">
-        <img class="more" src="img/more.gif">
-        <div class="clear"></div>					
-      </div>				
-      <img id="youtube_img" src="img/bach.jpg">
-    </article>
-  </section> <!-- notice_free_youtube -->
-  <section id="gallery">
-    <img src="img/latest4.gif">
-    <div id="gallery_box">
-      <div id="gallery_list">
-        <div class="items">
-          <ul>
-            <li><img src="img/img1.jpg"></li>
-            <li>기타 페스티벌 4중주</li>
-          </ul>
-        </div>
-        <div class="items">
-          <ul>
-            <li><img src="img/img1.jpg"></li>
-            <li>기타 페스티벌 4중주</li>
-          </ul>
-        </div>
-        <div class="items">
-          <ul>
-            <li><img src="img/img1.jpg"></li>
-            <li>기타 페스티벌 4중주</li>
-          </ul>
-        </div>
-      </div> <!-- galley_list -->
-    </div> <!-- gallery_box -->		
-  </section> <!-- gallery -->
-</section> <!-- section main -->
-<div class="clear"></div>
+<div id=gongback1></div>
+		<section id=main>
+			<div id=today>
+				<section class=gallery>
+					<p><link href="https://fonts.googleapis.com/css?family=Single+Day&display=swap&subset=korean"  rel="stylesheet">오늘 뭐먹지?</p>
+					<div id="gallery_box">
+						<div id="gallery_list">
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img3.jpg"></li>
+									<li>차돌숙주볶음</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img4.jpg"></li>
+									<li>콩나물불고기</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img5.jpg"></li>
+									<li>찜닭</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img6.jpg"></li>
+									<li>닭도리탕</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img7.jpg"></li>
+									<li>김치찌개</li>
+								</ul>
+							</div>
+						</div>
+						<!-- galley_list -->
+					</div>
+					<!-- gallery_box -->
+				</section>
+			</div>
+			<div id=gongback2></div>
+			<div id=best>
+				<section class=gallery>
+				<p><link href="https://fonts.googleapis.com/css?family=Single+Day&display=swap&subset=korean"  rel="stylesheet">레시피 Best</p>
+					<div id="gallery_box">
+						<div id="gallery_list">
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img8.jpg"></li>
+									<li>양념치킨</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img9.jpg"></li>
+									<li>계란말이</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img10.jpg"></li>
+									<li>잡채</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img11.jpg"></li>
+									<li>일본식 카레</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><img src="img/home/img12.jpg"></li>
+									<li>냉이된장국</li>
+								</ul>
+							</div>
+						</div>
+						<!-- galley_list -->
+					</div>
+					<!-- gallery_box -->
+				</section>
+			</div>
+			<div id=gongback2></div>
+			<div id=store>
+				<section class=gallery>
+					<p><link href="https://fonts.googleapis.com/css?family=Single+Day&display=swap&subset=korean"  rel="stylesheet">쇼핑몰 Best</p>
+					<div id="gallery_box">
+						<div id="gallery_list">
+							<div class="items" >
+								<ul>
+									<li><a href="https://www.11st.co.kr/html/main.html?gclid=CjwKCAjwsMzzBRACEiwAx4lLG1wOMi2MCAMBhijuuxfOEC27vrhiHwdn1dgTundW9j-U4_SQgGQLXRoCbtIQAvD_BwE?code=1020&utm_term=11QJSRK&utm_campaign=0829_%B1%B8%B1%DB11&utm_source=%B1%B8%B1%DB_PC_S&utm_medium=%B0%CB%BB%F6"><img src="img/home/img13.jpg" ></a></li>
+									<li>11번가</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><a href="https://www.coupang.com/np/categories/393760"><img src="img/home/img15.jpg"></a></li>
+									<li>쿠팡</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><a href="http://shopping.interpark.com/display/main.do?dispNo=001760&smid1=gnb&smid2=003&smid3=1"><img src="img/home/img16.jpg"></a></li>
+									<li>인터파크</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><a href="http://corners.gmarket.co.kr/ExpressShop"><img src="img/home/img17.jpg"></a></li>
+									<li>지마켓</li>
+								</ul>
+							</div>
+							<div class="items">
+								<ul>
+									<li><a href="http://www.auction.co.kr/category/category51.html"><img src="img/home/img17.jpg"></a></li>
+									<li>옥션</li>
+								</ul>
+							</div>
+						</div>
+						<!-- galley_list -->
+					</div>
+					<!-- gallery_box -->
+				</section>
+			</div>
+		</section>
+		<!-- main section-->
+		<div id=gongback1></div>
+
+
 <%@ include file="../footer.jsp" %>

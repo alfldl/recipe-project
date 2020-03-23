@@ -1,19 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<footer>
-  <img id="footer_logo" src="img/footer_logo.gif">
-  <ul id="address">
-    <li>서울시 강남구 삼성동 1234 우 : 123-1234</li>  
-    <li>TEL : 031-123-1234  Email : email@domain.com</li>
-    <li>COPYRIGHT (C) 루바토 ALL RIGHTS RESERVED</li>
-  </ul>
-  <ul id="footer_sns">
-    <li><img src="img/facebook.gif"></li>  
-    <li><img src="img/blog.gif"></li>
-    <li><img src="img/twitter.gif"></li>
-  </ul>
-</footer> <!-- footer -->
+	<footer>
 
-</div> <!-- wrap -->
+ 	 <ul style="list-style-type:none;">
+  	 	 <li>Copyright© 2020 j20200303 TEAM3 ALL RIGHTS RESERVED</li>
+ 	 </ul>
+  
+	</footer> <!-- footer -->
+
+	</div> <!-- wrap -->
+	
+	<script>
+				window.onscroll = function() {myFunction()};
+
+				var navbar = document.getElementById("navbar");
+				var sticky = navbar.offsetTop;
+
+				function myFunction() {
+				  if (window.pageYOffset >= sticky) {
+				    navbar.classList.add("sticky");
+				  } else {
+				    navbar.classList.remove("sticky");
+				  }
+				}
+						</script>
+						
 </body>
 </html>
