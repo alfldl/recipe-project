@@ -12,7 +12,6 @@ public class BoardListAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		return "boardlist.jsp";
+		return "board/boardList.jsp";
 	}
-
 }

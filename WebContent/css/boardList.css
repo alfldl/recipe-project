@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+body { 
+	background-color: #c0c0c0; font-size: 9pt; 
+	}
+table { 
+	background-color: #ffffff;
+	 }
+tr:hover { 
+	background-color: ornage; 
+	}
+td { 
+	background-color: #FFE271; text-align: center; padding: 10px;
+	}
+.left { 
+	text-align: left; 
+	}
+	
+	
