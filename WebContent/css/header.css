@@ -1,39 +1,4 @@
-header #top_menu {
-	position: absolute;
-	top: 10px;
-	left: 1200px;
-}
-header #main_menu {
-    width:1450px;
-    height:38px;
-    background-image:url("../img/main_menu_bg.png");
-    background-repeat:no-repeat;	
-    position:absolute;
-    top:40px;
-    left:210px;
-    float: left;:
-}
-header #main_menu li {
-    display:inline-block;
-    margin:12px 30px 0 50px;
-    font-size:13px;
-}
-header #main_menu a:link {
-    text-decoration:none;
-    color:black;
-}
-header #main_menu a:hover {
-    text-decoration:none;
-    color:black;
-}
-header #main_menu a:visited {
-    text-decoration:none;
-    color:black;
-}
-header #main_menu a:active {
-    text-decoration:none;
-    color:black;
-}
+
 div #gongback1 {
 	height: 50px;
 }
@@ -67,7 +32,7 @@ section .items li {
 	list-style:none;
 }
 .dropbtn {
-	margin-top:20px;
+  margin-top:20px;
   background-color: gray;
   color: white;
   padding: 11px;
@@ -155,30 +120,9 @@ padding-top:60px;
 	height: 50px;
 	position:fixed;
 }
-p{font-family: 'Single Day', cursive;
+p.title{
+ font-family: 'Single Day', cursive;
  font-size: 30px;
-color:teal;
+ color:teal;
 }
-input.a {
-width:600px;
- height:200px;
- float:right;
- position: relative;
-right:100px;
-bottom:10px; 
-}
-input.b {
-float:right;
-position: relative;
-left:600px;
-right:130px;
-top:130px;
-cursor: pointer; 
-border-radius: 4px;
-font:14px,"Noto Sans KR",sans-serif;
-background: white;
-padding: 10px 10px;
-}
-input.b:hover{
-background-color:lightgray;
-}
+

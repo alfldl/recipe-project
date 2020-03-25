@@ -9,7 +9,7 @@
 		<section id=main>
 			<div id=today>
 				<section class=gallery>
-					<p><link href="https://fonts.googleapis.com/css?family=Single+Day&display=swap&subset=korean"  rel="stylesheet">오늘 뭐먹지?</p>
+					<p class="title">오늘 뭐먹지?</p>
 					<div id="gallery_box">
 						<div id="gallery_list">
 							<div class="items">
@@ -51,7 +51,7 @@
 			<div id=gongback2></div>
 			<div id=best>
 				<section class=gallery>
-				<p><link href="https://fonts.googleapis.com/css?family=Single+Day&display=swap&subset=korean"  rel="stylesheet">레시피 Best</p>
+				<p class="title">레시피 Best</p>
 					<div id="gallery_box">
 						<div id="gallery_list">
 							<div class="items">
@@ -93,7 +93,7 @@
 			<div id=gongback2></div>
 			<div id=store>
 				<section class=gallery>
-					<p><link href="https://fonts.googleapis.com/css?family=Single+Day&display=swap&subset=korean"  rel="stylesheet">쇼핑몰 Best</p>
+					<p class="title">쇼핑몰 Best</p>
 					<div id="gallery_box">
 						<div id="gallery_list">
 							<div class="items" >

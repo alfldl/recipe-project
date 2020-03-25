@@ -9,11 +9,11 @@
 <title>RECIPE</title>
 <link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/footer.css">
-
+<link href="https://fonts.googleapis.com/css?family=Single+Day&display=swap&subset=korean"  rel="stylesheet">
 </head>
 
 <body>
-	<div id="wrap" >
+	<div>
 		<header>
 			<div id="con1">
 			<nav class="dropdown" style="float: right;">
@@ -30,7 +30,7 @@
 			<ul>
 					<li><a href="home.do">홈</a></li>
 					<li><a href="#">레시피</a></li>
-					<li><a href="boardlist.do">게시판</a></li>
+					<li><a href="boardList.do">게시판</a></li>
 					<li><a href="#">스토어</a></li>
 					<li><a href="#">냉장고</a></li>
 			</ul>

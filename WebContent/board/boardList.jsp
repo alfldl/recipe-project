@@ -6,17 +6,36 @@
 
 <%@ include file="../header.jsp" %>
 
-<link rel="stylesheet" href="css/boardList.css" type="text/css" >
 
+
+<div id=gongback1></div>
 <div id=gongback1></div>
 <style type="text/css"> 
 table {
-	width: 100%;
+	width: 80%;
+	
 }
+
+.button {
+  background-color: #808080;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  float: right;
+  cursor: pointer;
+  border-radius: 10px; 
+  margin-bottom: 25px; 
+  
+}
+
 </style>
 
-<hr>
-	<h2>자유게시판</h2>
+<div>
+	<h2 >자유게시판</h2>
 <hr>
 
 	<table>
@@ -26,15 +45,13 @@ table {
 		</tr>
 	</table>
 
-	<table>
-		<tr><td><a href="boardWriteForm.do">글쓰기</a></td></tr>
-	</table>
 	
-	<td>${board.mNo } </td>
+		<a href="boardWriteForm.do" class="button">글쓰기</a>
+		
 	
 	
-	
-<hr>
+</div>
+
 
 <%@ include file="../footer.jsp" %>
 </html>
