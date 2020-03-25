@@ -2,7 +2,14 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<title>Board</title>
 
+<%@ include file="../header.jsp" %>
+
+<div id=gongback1></div>
+<div id=gongback1></div>
+
+<div id="wrap">
 <form action="boardWritePro.do" method="post">
 	<table>
 			<caption>
@@ -35,3 +42,6 @@
 			</tr>
 		</table>
 	</form>
+	</div>
+	
+	<%@ include file="../footer.jsp" %>

@@ -12,7 +12,7 @@ public class BoardWriteProAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("BoardWriteProAction");
-		return "boardWriteForm.jsp";
+		return "boardWritePro.jsp";
 	}
-
+	
 }
