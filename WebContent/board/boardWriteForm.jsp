@@ -12,35 +12,31 @@
 <div id="wrap">
 <form action="boardWritePro.do" method="post">
 	<table>
-			<caption>
-				<h2>게시판 글쓰기</h2>
-			</caption>
-			<tr>
-				<td>제목</td>
-				<td><input type="text" name="title" required="required"></td>
-				</tr>
-			<tr>
-				<td>작성자</td>
-				<td><input type="text" name="writer" required="required"></td>
-			</tr>
-			<tr>
-				<td>이메일</td>
-				<td><input type="email" name="email" required="required"></td>
-			</tr>
-			<tr>
-				<td>내용</td>
-				<td><textarea rows="10" cols="30" name="content"
-						required="required"></textarea></td>
-			</tr>
-			<tr>
-				<td>암호</td>
-				<td><input type="password" name="passwd" required="required"></td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="확인"></td>
-				<td><input type="reset" value="다시작성"></td>
-			</tr>
-		</table>
+		<caption>
+			<h2>게시판 글쓰기</h2>
+		</caption>
+		
+		<tr>
+			<td>		
+				<input type="text" name="title" required="required" placeholder="게시글 제목을 입력해주세요" 
+					size="110">
+			</td>
+		</tr>		
+		
+		<tr>
+			<td><textarea rows="20" cols="100" name="content"
+					required="required" placeholder="내용을 입력하세요"></textarea>
+			</td>
+		</tr>		
+				
+		<tr>
+			<td>
+				<input type="submit" value="확인">
+				<input type="reset" value="다시작성">
+			</td>
+		</tr>	
+			
+		</table>		
 	</form>
 	</div>
 	
