@@ -48,6 +48,17 @@ table {
 	
 		<a href="boardWriteForm.do" class="button">글쓰기</a>
 		
+	<div style="text-align: center;">
+		<c:if test="${startPage > blockSize }">
+			<a href='list.do?pageNum=${startPage-blockSize}'>[이전]</a>
+		</c:if>
+		<c:forEach var="i" begin="${startPage}" end="${endPage}">
+			<a href='list.do?pageNum=${i}'>[${i}]</a>
+		</c:forEach>
+		<c:if test="${endPage < pageCnt }">
+			<a href='list.do?pageNum=${startPage+blockSize}'>[다음]</a>
+		</c:if>
+	</div>
 	
 	
 </div>
