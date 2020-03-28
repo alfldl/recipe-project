@@ -3,6 +3,8 @@ package dto;
 import java.util.Date;
 
 public class Board {
+	
+	private int rowNum; 
 	private int bNo;
 	private int mNo;
 	private String title;
@@ -11,7 +13,20 @@ public class Board {
 	private int likeCnt;
 	private Date bDate;
 	private int Hits;
+	private String writer;
 	
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public int getRowNum() {
+		return rowNum;
+	}
+	public void setRowNum(int rowNum) {
+		this.rowNum = rowNum;
+	}
 	
 	public int getbNo() {
 		return bNo;

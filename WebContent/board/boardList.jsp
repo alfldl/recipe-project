@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <title>BoardList</title>
@@ -34,7 +36,7 @@ table {
 
 </style>
 
-<div id="wrap">
+<div id="board">
 	<h2 >자유게시판</h2>
 <hr>
 
@@ -43,6 +45,18 @@ table {
 			<th>NO.</th><th>제목</th><th>작성자</th>
 			<th>작성일</th><th>조회수</th><th>좋아요♥</th>
 		</tr>
+		<c:forEach items="${list}" var="board">
+		<tr>
+			<td>${ board.bNo}</td>
+			<td>${ board.title}</td>
+			<td>${ board.writer}</td>
+			<td>${ board.bDate}</td>
+			<td>${ board.hits}</td>
+			<td>${ board.likeCnt}</td>
+		</tr>
+		</c:forEach>
+			
+		
 	</table>
 
 	
@@ -50,13 +64,13 @@ table {
 		
 	<div style="text-align: center;">
 		<c:if test="${startPage > blockSize }">
-			<a href='list.do?pageNum=${startPage-blockSize}'>[이전]</a>
+			<a href='boardList.do?pageNum=${startPage-blockSize}'>[이전]</a>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<a href='list.do?pageNum=${i}'>[${i}]</a>
+			<a href='boardList.do?pageNum=${i}'>[${i}]</a>
 		</c:forEach>
 		<c:if test="${endPage < pageCnt }">
-			<a href='list.do?pageNum=${startPage+blockSize}'>[다음]</a>
+			<a href='boardList.do?pageNum=${startPage+blockSize}'>[다음]</a>
 		</c:if>
 	</div>
 	

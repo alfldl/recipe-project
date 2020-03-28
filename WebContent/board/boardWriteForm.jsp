@@ -9,7 +9,7 @@
 <div id=gongback1></div>
 <div id=gongback1></div>
 
-<div id="wrap">
+<div id="board">
 <form action="boardWritePro.do" method="post">
 	<table>
 		<caption>
