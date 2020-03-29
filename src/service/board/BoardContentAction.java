@@ -5,31 +5,31 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+import dao.Board;
+import dao.BoardDao;
 import service.CommandProcess;
 
-public class BoardWriteFormAction implements CommandProcess {
+public class BoardContentAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("BoardWriteAction start..");
 		
 		try {
-			int bNo = 0; 
-			int mNo = 0;
+			int bNo = Integer.parseInt(request.getParameter("bNo"));
 			String pageNum = request.getParameter("pageNum");
-			if (pageNum == null) pageNum = "1";
-	//		HttpSession session = request.getSession();
-	//		session.getAttribute("member");
-			request.setAttribute("mNo", 1);
+			BoardDao boardDao = BoardDao.getInstance();
+			boardDao.hits(bNo);
+			Board board = boardDao.select(bNo);
+			
 			request.setAttribute("bNo", bNo);
 			request.setAttribute("pageNum", pageNum);
+			request.setAttribute("board", board);
 			
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "board/boardWriteForm.jsp";
+		return "board/boardContent.jsp";
 	}
 }

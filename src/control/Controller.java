@@ -78,7 +78,11 @@ public class Controller extends HttpServlet {
 		} catch(Throwable e) {
 			throw new ServletException(e);
 		}
-		
+		if (view.startsWith("redirect:")) {
+			view = view.replace("redirect:", "");
+			response.sendRedirect(view);
+			return;
+		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
 	}

@@ -1,31 +1,32 @@
-package dto;
+package dao;
 
 import java.util.Date;
 
 public class Board {
 	
-	private int rowNum; 
 	private int bNo;
 	private int mNo;
+	private String writer;
 	private String title;
 	private String content;
 	private int reCnt;
 	private int likeCnt;
 	private Date bDate;
 	private int Hits;
-	private String writer;
+	
+	
+	public int getmNo() {
+		return mNo;
+	}
+	public void setmNo(int mNo) {
+		this.mNo = mNo;
+	}
 	
 	public String getWriter() {
 		return writer;
 	}
 	public void setWriter(String writer) {
 		this.writer = writer;
-	}
-	public int getRowNum() {
-		return rowNum;
-	}
-	public void setRowNum(int rowNum) {
-		this.rowNum = rowNum;
 	}
 	
 	public int getbNo() {
@@ -34,12 +35,7 @@ public class Board {
 	public void setbNo(int bNo) {
 		this.bNo = bNo;
 	}
-	public int getmNo() {
-		return mNo;
-	}
-	public void setmNo(int mNo) {
-		this.mNo = mNo;
-	}
+
 	public String getTitle() {
 		return title;
 	}

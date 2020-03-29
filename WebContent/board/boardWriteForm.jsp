@@ -8,9 +8,17 @@
 
 <div id=gongback1></div>
 <div id=gongback1></div>
-
+<script>
+var error = "${param.error}"
+if (error == "true") {
+	alert("요청이 잘못되었습니다.")
+}
+</script>
 <div id="board">
-<form action="boardWritePro.do" method="post">
+	<form action="boardWritePro.do?pageNum=${pageNum }" method="post">
+		<input type="hidden" name="bNo" value="${bNo }">
+		<input type="hidden" name="mNo" value="${mNo }">
+
 	<table>
 		<caption>
 			<h2>게시판 글쓰기</h2>
@@ -24,7 +32,7 @@
 		</tr>		
 		
 		<tr>
-			<td><textarea rows="20" cols="100" name="content"
+			<td><textarea  style="resize: none" rows="20" cols="100" name="content"
 					required="required" placeholder="내용을 입력하세요"></textarea>
 			</td>
 		</tr>		
@@ -32,7 +40,7 @@
 		<tr>
 			<td>
 				<input type="submit" value="확인">
-				<input type="reset" value="다시작성">
+				<input type="button" value="취소" onclick="history.back()">
 			</td>
 		</tr>	
 			

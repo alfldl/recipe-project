@@ -45,18 +45,19 @@ table {
 			<th>NO.</th><th>제목</th><th>작성자</th>
 			<th>작성일</th><th>조회수</th><th>좋아요♥</th>
 		</tr>
-		<c:forEach items="${list}" var="board">
-		<tr>
-			<td>${ board.bNo}</td>
-			<td>${ board.title}</td>
-			<td>${ board.writer}</td>
-			<td>${ board.bDate}</td>
-			<td>${ board.hits}</td>
-			<td>${ board.likeCnt}</td>
-		</tr>
-		</c:forEach>
-			
-		
+		<c:if test="${totalCnt > 0 }">
+			<c:forEach items="${list}" var="board">
+					<tr style="text-align: center">
+						<td>${ board.bNo}</td>
+						<td><a href='boardContent.do?bNo=${board.bNo}&pageNum=${currentPage}'>
+							${ board.title}</a></td>
+						<td>${ board.writer}</td>
+						<td>${ board.bDate}</td>
+						<td>${ board.hits}</td>
+						<td>${ board.likeCnt}</td>
+					</tr>
+			</c:forEach>
+		</c:if>
 	</table>
 
 	

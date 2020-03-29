@@ -7,8 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.Board;
 import dao.BoardDao;
-import dto.Board;
 import service.CommandProcess;
 
 
@@ -36,7 +36,7 @@ public class BoardListAction implements CommandProcess {
 			int startPage = ((int) (currentPage-1)/blockSize)*blockSize + 1; 
 			int endPage = startPage + blockSize -1;	   
 			if (endPage > pageCnt) endPage = pageCnt;
-			System.out.println("===============" + startRow + " " + endRow);
+			
 			List<Board> list = boardDao.list(startRow, endRow);	
 			
 			request.setAttribute("totalCnt", totalCnt);
