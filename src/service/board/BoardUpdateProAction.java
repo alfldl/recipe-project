@@ -23,14 +23,13 @@ public class BoardUpdateProAction implements CommandProcess {
 			request.getParameter("bNo");
 			Board board = new Board();
 			board.setbNo(Integer.parseInt(request.getParameter("bNo")));
-		//	board.setmNo(Integer.parseInt(request.getParameter("mNo")));
 			board.setTitle(request.getParameter("title"));
 			board.setContent(request.getParameter("content"));
 			
 			BoardDao boardDao = BoardDao.getInstance();
 			int result = boardDao.update(board);
 			if ( result > 0) {
-				return "redirect:boardList.do";
+				return "redirect:boardList.do?";
 			}
 			return "redirect:boardUpdate.do?pageNum=" + pageNum + "&error=true";
 			

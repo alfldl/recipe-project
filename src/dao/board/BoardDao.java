@@ -202,8 +202,26 @@ public class BoardDao {
 			if (conn !=null) conn.close();
 		}
 		return result;
+	}
+
+	public int delete(int bNo, String pw) throws SQLException{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String pwSql ="SELECT m_pw FROM board b left join member m "
+					+ "on b.m_no = m.m_no where b_No=?";
+		String delSql ="delete from board where b_no=65;";
+		int result = 0;
+		return result;
 	}	
 	
 	
 	
 }
+
+
+
+
+
+
+
