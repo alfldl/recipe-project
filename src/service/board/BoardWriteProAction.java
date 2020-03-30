@@ -16,27 +16,24 @@ public class BoardWriteProAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("BoardWriteProAction");
+		request.setCharacterEncoding("utf-8");
+		String pageNum = request.getParameter("pageNum");
+		Board board = new Board();
+		board.setbNo(Integer.parseInt(request.getParameter("bNo")));
+		board.setmNo(Integer.parseInt(request.getParameter("mNo")));
+		board.setTitle(request.getParameter("title"));
+		board.setContent(request.getParameter("content"));
 		
 		try {
-			request.setCharacterEncoding("utf-8");
-			String pageNum = request.getParameter("pageNum");
-			
-			Board board = new Board();
-			board.setbNo(Integer.parseInt(request.getParameter("bNo")));
-			board.setmNo(Integer.parseInt(request.getParameter("mNo")));
-			board.setTitle(request.getParameter("title"));
-			board.setContent(request.getParameter("content"));
-			
 			BoardDao boardDao = BoardDao.getInstance();
 			int result = boardDao.insert(board);
 			if (result > 0) {
 				return "redirect:boardList.do";
 			}
-			return "redirect:boardWriteForm.do?pageNum=" + pageNum + "&error=true";
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return "redirect:boardWriteForm.do?pageNum=" + pageNum + "&error=true";
 	}
 }

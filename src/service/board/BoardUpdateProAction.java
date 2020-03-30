@@ -20,6 +20,7 @@ public class BoardUpdateProAction implements CommandProcess {
 		try {
 			request.setCharacterEncoding("utf-8");
 			String pageNum = request.getParameter("pageNum");
+			System.out.println(pageNum);
 			request.getParameter("bNo");
 			Board board = new Board();
 			board.setbNo(Integer.parseInt(request.getParameter("bNo")));
@@ -29,7 +30,7 @@ public class BoardUpdateProAction implements CommandProcess {
 			BoardDao boardDao = BoardDao.getInstance();
 			int result = boardDao.update(board);
 			if ( result > 0) {
-				return "redirect:boardList.do?";
+				return "redirect:boardList.do?pageNum=" + pageNum;
 			}
 			return "redirect:boardUpdate.do?pageNum=" + pageNum + "&error=true";
 			

@@ -7,7 +7,12 @@
 <title>BoardList</title>
 
 <%@ include file="../header.jsp" %>
-
+<script>
+var isDelete = "${param.delete}"
+if (isDelete == "true") {
+	alert("삭제완료!");
+} 
+</script>
 
 
 <div id=gongback1></div>

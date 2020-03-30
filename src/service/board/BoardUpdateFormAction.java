@@ -26,6 +26,7 @@ public class BoardUpdateFormAction implements CommandProcess {
 			Board board = boardDao.select(bNo);
 			
 			request.setAttribute("bNo", bNo);
+			request.setAttribute("pageNum", pageNum);
 			request.setAttribute("board", board);
 			
 		} catch (Exception e) {

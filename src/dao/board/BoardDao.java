@@ -204,17 +204,26 @@ public class BoardDao {
 		return result;
 	}
 
-	public int delete(int bNo, String pw) throws SQLException{
+	public int delete(int bNo) throws SQLException {
 		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String pwSql ="SELECT m_pw FROM board b left join member m "
-					+ "on b.m_no = m.m_no where b_No=?";
-		String delSql ="delete from board where b_no=65;";
+		Statement stmt = null;
+		String sql ="delete from board where b_no=" + bNo;
 		int result = 0;
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			result = stmt.executeUpdate(sql);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (conn != null) conn.close();
+			if (stmt != null) stmt.close();
+		}
 		return result;
 	}	
-	
 	
 	
 }

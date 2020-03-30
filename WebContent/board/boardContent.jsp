@@ -5,6 +5,13 @@
 <title>BoardContent</title>
 
 <%@ include file="../header.jsp" %>
+<script>
+var isDelete = "${param.delete}"
+if (isDelete == "false") {
+	alert("잘못된 요청입니다.");
+}
+</script>
+
 <div id=gongback1></div>
 <div id=gongback1></div>
 
@@ -21,7 +28,7 @@
 		<button onclick="location.href='boardUpdateForm.do?bNo=${board.bNo}&pageNum=${pageNum}'">
 		           수정
 		 </button>           
-		<button onclick="location.href='boardDeleteForm.do?bNo=${board.bNo}&pageNum=${pageNum}'">
+		<button onclick="location.href='boardDeletePro.do?bNo=${board.bNo}&pageNum=${pageNum}'">
 		            삭제
 		</button>
 	<div>

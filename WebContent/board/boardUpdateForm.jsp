@@ -17,7 +17,6 @@ if (error == "true") {
 <div id="board">
 	<form action="boardUpdatePro.do" method="post">
 		<input type="hidden" name="bNo" value="${bNo }">
-		<input type="hidden" name="mNo" value="${mNo }">
 		<input type="hidden" name="pageNum" value="${pageNum }">
 		
 	<table>
