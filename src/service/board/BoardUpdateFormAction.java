@@ -17,15 +17,18 @@ public class BoardUpdateFormAction implements CommandProcess {
 			throws ServletException, IOException {
 		
 		System.out.println("BoardUpdateFormAction!!");
+		int bNo = Integer.parseInt(request.getParameter("bNo"));
+		int mNo = Integer.parseInt(request.getParameter("mNo"));
+		String pageNum = request.getParameter("pageNum");
 		
 		try {
-			int bNo = Integer.parseInt(request.getParameter("bNo"));
-			String pageNum = request.getParameter("pageNum");
-			
 			BoardDao boardDao = BoardDao.getInstance();
 			Board board = boardDao.select(bNo);
 			
 			request.setAttribute("bNo", bNo);
+	//	    HttpSession session = request.getSession();
+	//		session.getAttribute("member");
+			request.setAttribute("mNo", mNo);
 			request.setAttribute("pageNum", pageNum);
 			request.setAttribute("board", board);
 			

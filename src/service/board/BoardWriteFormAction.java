@@ -18,12 +18,12 @@ public class BoardWriteFormAction implements CommandProcess {
 		
 		try {
 			int bNo = 0; 
-			int mNo = 0;
+			int mNo = 3;
 			String pageNum = request.getParameter("pageNum");
 			if (pageNum == null) pageNum = "1";
 	//		HttpSession session = request.getSession();
 	//		session.getAttribute("member");
-			request.setAttribute("mNo", 3);
+			request.setAttribute("mNo", mNo);
 			request.setAttribute("bNo", bNo);
 			request.setAttribute("pageNum", pageNum);
 			
