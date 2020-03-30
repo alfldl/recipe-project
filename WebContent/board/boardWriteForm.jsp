@@ -27,12 +27,12 @@ if (error == "true") {
 		<tr>
 			<td>		
 				<input type="text" name="title" required="required" placeholder="게시글 제목을 입력해주세요" 
-					size="110">
+					size="100">
 			</td>
 		</tr>		
 		
 		<tr>
-			<td><textarea  style="resize: none" rows="20" cols="100" name="content"
+			<td><textarea  style="resize: none" rows="20" cols="105" name="content"
 					required="required" placeholder="내용을 입력하세요"></textarea>
 			</td>
 		</tr>		
@@ -46,6 +46,6 @@ if (error == "true") {
 			
 		</table>		
 	</form>
-	</div>
+</div>
 	
 	<%@ include file="../footer.jsp" %>

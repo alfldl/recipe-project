@@ -6,8 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.Board;
-import dao.BoardDao;
+import dao.board.Board;
+import dao.board.BoardDao;
 import service.CommandProcess;
 
 public class BoardContentAction implements CommandProcess {

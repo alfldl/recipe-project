@@ -1,4 +1,4 @@
-package dao;
+package dao.board;
 
 import java.sql.*;
 import java.util.*;
@@ -165,7 +165,7 @@ public class BoardDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "insert into board values( " 
-				+ "b_no.nextval, 1, ?, ?, "
+				+ "b_no.nextval, 3, ?, ?, "
 				+ "0, 0, sysdate, 0)";
 		
 		try {
@@ -178,15 +178,31 @@ public class BoardDao {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	public int update(Board board) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String sql = "UPDATE board set b_title=?, b_content=? "
+					+ "WHERE b_no=?";
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContent());
+			pstmt.setInt(3, board.getbNo());
+			
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (pstmt != null) pstmt.close();
+			if (conn !=null) conn.close();
+		}
+		return result;
 	}	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
