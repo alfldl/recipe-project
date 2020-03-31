@@ -57,6 +57,10 @@ public class LikeDao {
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
+		} finally {
+			if (conn != null) conn.close();
+			if (pstmt != null) pstmt.close();
+			if (rs != null) rs.close();
 		}
 		return 0;
 	}
@@ -94,10 +98,8 @@ public class LikeDao {
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
-			
+			if (conn != null) conn.close();
+			if (stmt != null) stmt.close();
 		}
 	}
-	
-	
-	
 }
