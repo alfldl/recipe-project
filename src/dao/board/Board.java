@@ -14,7 +14,6 @@ public class Board {
 	private Date bDate;
 	private int Hits;
 	
-	
 	public int getmNo() {
 		return mNo;
 	}

@@ -25,12 +25,18 @@ if (isDelete == "false") {
 			${board.content }
 		</article>
 	</section>
+	<section style=text-align:right>
+		<a href='like.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo }'>
+		            좋아요<span style="color: red">♡</span>
+		</a>
 		<button onclick="location.href='boardUpdateForm.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo}'">
 		           수정
 		 </button>           
 		<button onclick="location.href='boardDeletePro.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo }'">
 		            삭제
 		</button>
+	</section>
+		
 	<div>
 		<div>${board.writer }</div>
 	</div>
