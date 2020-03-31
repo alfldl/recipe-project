@@ -25,10 +25,10 @@ if (isDelete == "false") {
 			${board.content }
 		</article>
 	</section>
-		<button onclick="location.href='boardUpdateForm.do?bNo=${board.bNo}&pageNum=${pageNum}'">
+		<button onclick="location.href='boardUpdateForm.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo}'">
 		           수정
 		 </button>           
-		<button onclick="location.href='boardDeletePro.do?bNo=${board.bNo}&pageNum=${pageNum}'">
+		<button onclick="location.href='boardDeletePro.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo}'">
 		            삭제
 		</button>
 	<div>

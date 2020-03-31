@@ -70,7 +70,7 @@ public class BoardDao {
 					 + "FROM "
 					 + "( "
 					 +	 "SELECT "
-					 + 		"b.b_no, b.b_title, b.like_cnt, b.b_date, b.b_hits, m.m_name "
+					 + 		"b.b_no, b.m_no, b.b_title, b.like_cnt, b.b_date, b.b_hits, m.m_name "
 					 + 	 "FROM board b "
 					 + 	 "LEFT JOIN member m "
 					 +   "ON b.m_no = m.m_no "
@@ -87,6 +87,7 @@ public class BoardDao {
 			while (rs.next()) {
 				Board board = new Board();
 				board.setbNo(rs.getInt("b_no"));
+				board.setmNo(rs.getInt("m_no"));
 				board.setWriter(rs.getString("m_name"));
 				board.setTitle(rs.getString("b_title"));
 				board.setbDate(rs.getDate("b_date"));
@@ -110,7 +111,7 @@ public class BoardDao {
 		Statement stmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT " 
-				+ "b.b_no, b.b_title, b_content, b.like_cnt, b.b_date, b.b_hits, m.m_name " 
+				+ "b.b_no, b.m_no, b.b_title, b_content, b.like_cnt, b.b_date, b.b_hits, m.m_name " 
 				+ "FROM board b " 
 				+ "LEFT JOIN member m " 
 				+ "ON b.m_no = m.m_no " 
@@ -124,6 +125,7 @@ public class BoardDao {
 			
 			if (rs.next()) {
 				board.setbNo(rs.getInt("b_no"));
+				board.setmNo(rs.getInt("m_no"));
 				board.setWriter(rs.getString("m_name"));
 				board.setTitle(rs.getString("b_title"));
 				board.setContent(rs.getString("b_content"));
@@ -144,7 +146,7 @@ public class BoardDao {
 	public void hits(int bNo) throws SQLException {
 		Connection conn =null;
 		PreparedStatement pstmt = null;
-		String sql = "update board set b_hits=b_hits+1 where b_no=?";	
+		String sql = "UPDATE board SET b_hits=b_hits+1 WHERE b_no=?";	
 		
 		try {
 			conn = getConnection();
@@ -164,7 +166,7 @@ public class BoardDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "insert into board values( " 
+		String sql = "INSERT INTO board VALUES( " 
 				+ "b_no.nextval, 3, ?, ?, "
 				+ "0, 0, sysdate, 0)";
 		
@@ -184,7 +186,7 @@ public class BoardDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int result = 0;
-		String sql = "UPDATE board set b_title=?, b_content=? "
+		String sql = "UPDATE board SET b_title=?, b_content=? "
 					+ "WHERE b_no=?";
 		
 		try {
@@ -207,7 +209,7 @@ public class BoardDao {
 	public int delete(int bNo) throws SQLException {
 		Connection conn = null;
 		Statement stmt = null;
-		String sql ="delete from board where b_no=" + bNo;
+		String sql ="DELETE FROME board WHERE b_no=" + bNo;
 		int result = 0;
 		
 		try {

@@ -54,7 +54,7 @@ table {
 			<c:forEach items="${list}" var="board">
 					<tr style="text-align: center">
 						<td>${ board.bNo}</td>
-						<td><a href='boardContent.do?bNo=${board.bNo}&pageNum=${currentPage}'>
+						<td><a href='boardContent.do?bNo=${board.bNo}&pageNum=${currentPage}&mNo=${board.mNo}'>
 							${ board.title}</a></td>
 						<td>${ board.writer}</td>
 						<td>${ board.bDate}</td>
