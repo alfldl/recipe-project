@@ -165,7 +165,6 @@ public class BoardDao {
 		int result = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		String sql = "INSERT INTO board VALUES( " 
 				+ "b_no.nextval, 3, ?, ?, "
 				+ "0, 0, sysdate, 0)";
@@ -209,7 +208,7 @@ public class BoardDao {
 	public int delete(int bNo) throws SQLException {
 		Connection conn = null;
 		Statement stmt = null;
-		String sql ="DELETE FROME board WHERE b_no=" + bNo;
+		String sql ="DELETE FROM board WHERE b_no=" + bNo;
 		int result = 0;
 		
 		try {
