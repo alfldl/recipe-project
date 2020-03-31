@@ -224,6 +224,41 @@ public class BoardDao {
 			if (stmt != null) stmt.close();
 		}
 		return result;
+	}
+
+	public void increaseLikes(int bNo) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		String sql ="Update board SET like_cnt = like_cnt+1 WHERE b_no="+bNo;
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			stmt.executeUpdate(sql);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (conn != null) conn.close();
+			if (stmt != null) stmt.close(); 
+		}
+	}
+
+	public void decreaseLikes(int bNo) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		String sql = "Update board SET like_cnt = like_cnt-1 WHERE b_no="+bNo;
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			stmt.executeUpdate(sql);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (conn != null) conn.close();
+			if (stmt != null) stmt.close();
+		}
 	}	
 }
 

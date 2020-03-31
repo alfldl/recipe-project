@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE>
 <html>
 <title>BoardContent</title>
@@ -11,7 +13,11 @@ if (isDelete == "false") {
 	alert("잘못된 요청입니다.");
 }
 </script>
-
+<style>
+.likes {
+text-decoration: none;
+}
+</style>
 <div id=gongback1></div>
 <div id=gongback1></div>
 
@@ -26,8 +32,13 @@ if (isDelete == "false") {
 		</article>
 	</section>
 	<section style=text-align:right>
-		<a href='like.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo }'>
-		            좋아요<span style="color: red">♡</span>
+		<a href='like.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo }' class="likes">
+		            좋아요
+		   <c:choose>
+		   		<c:when test="${isLike eq 0 }"> ♡ </c:when>
+		   		<c:otherwise> ♥ </c:otherwise>
+		   
+		   </c:choose>     
 		</a>
 		<button onclick="location.href='boardUpdateForm.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo}'">
 		           수정

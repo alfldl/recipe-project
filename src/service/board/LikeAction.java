@@ -1,6 +1,7 @@
 package service.board;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,17 +24,25 @@ public class LikeAction implements CommandProcess {
 		String  pageNum = request.getParameter("pageNum"); 
 		
 		try {
+			LikeDao likeDao = LikeDao.getInstance();
 			BoardDao boardDao = BoardDao.getInstance();
-			Board board = boardDao.select(bNo);
 			
-			
+			int count = likeDao.count(bNo, mNo);
+			System.out.println(count);
+			if(count == 0) {
+				boardDao.increaseLikes(bNo);
+				likeDao.insert(mNo, bNo);
+			} else {
+				boardDao.decreaseLikes(bNo);
+				likeDao.delete(mNo, bNo);
+			}
 			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return "";
+		return "redirect:boardContent.do?pageNum=" + pageNum + "&bNo=" + bNo + "&mNo=" + mNo;
 	}
 
 }
