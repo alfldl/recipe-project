@@ -8,7 +8,14 @@ public class Reply {
 	private String content;
 	private Date date;
 	private String writer;
+	private int brNo;
 	
+	public int getBrNo() {
+		return brNo;
+	}
+	public void setBrNo(int brNo) {
+		this.brNo = brNo;
+	}
 	public String getWriter() {
 		return writer;
 	}

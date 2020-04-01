@@ -52,10 +52,14 @@ text-decoration: none;
 		<div>${board.writer }</div>
 	</div>
 	<div>
-		<textarea style="resize: none; width: 800px; height: 90px;"></textarea>
-		<button onclick="location.href='replyWrite.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo }'">
-			등록
-		</button>
+		<form action="replyWrite.do" method="post">
+			<input type="hidden" name="bNo" value="${bNo }">
+			<input type="hidden" name="pageNum" value="${pageNum }">
+			<textarea style="resize: none; width: 800px; height: 90px;" name="content"></textarea>
+			<button>
+				등록
+			</button>
+		</form>
 	</div>
 		<button onclick="location.href='boardList.do?pageNum=${pageNum}'">
 		목록

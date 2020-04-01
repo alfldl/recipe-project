@@ -1,6 +1,7 @@
 package service.board;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import dao.board.Board;
 import dao.board.BoardDao;
 import dao.board.LikeDao;
+import dao.board.Reply;
+import dao.board.ReplyDao;
 import service.CommandProcess;
 
 public class BoardContentAction implements CommandProcess {
@@ -20,7 +23,6 @@ public class BoardContentAction implements CommandProcess {
 		try {
 			int bNo = Integer.parseInt(request.getParameter("bNo"));
 			int mNo = Integer.parseInt(request.getParameter("mNo"));
-			System.out.println("mNo="+ mNo);
 			String pageNum = request.getParameter("pageNum");
 			BoardDao boardDao = BoardDao.getInstance();
 			boardDao.hits(bNo);
@@ -29,6 +31,10 @@ public class BoardContentAction implements CommandProcess {
 			LikeDao likeDao = LikeDao.getInstance();
 			int isLike = likeDao.count(bNo, mNo);
 			
+			ReplyDao replyDao = ReplyDao.getInstance();
+			List<Reply> replyList =replyDao.select(bNo);
+			request.setAttribute("", arg1);
+		
 			request.setAttribute("isLike", isLike);
 			request.setAttribute("mNo", mNo);
 			request.setAttribute("bNo", bNo);

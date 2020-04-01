@@ -1,6 +1,13 @@
 package dao.board;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -29,5 +36,65 @@ public class ReplyDao {
 			e.printStackTrace();
 		}
 		return conn;
+	}
+
+	public List<Reply> select(int bNo) throws SQLException {
+		Connection conn = getConnection();
+		Statement stmt = null;
+		String sql = "SELECT " 
+				+ "r.*, m.m_name " 
+				+ "FROM reply r " 
+				+ "LEFT JOIN member m " 
+				+ "ON r.m_no = m.m_no " 
+				+ "WHERE b_no ="+ bNo; 
+		ResultSet rs = null;
+		List<Reply> list = new ArrayList<>();
+		
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				Reply reply = new Reply();
+				
+				reply.setbNo(rs.getInt("b_no"));
+				reply.setmNo(rs.getInt("m_no"));
+				reply.setBrNo(rs.getInt("re_no"));
+				reply.setContent(rs.getString("br_content"));
+				reply.setDate(rs.getDate("br_date"));
+				reply.setWriter(rs.getString("m_name"));
+				
+				list.add(reply);	
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (stmt != null) stmt.close();
+			if (conn !=null) conn.close();
+			if (rs !=null) rs.close();
+		}
+		return list;
+	}
+
+	public int insert(Reply reply) throws SQLException {
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "INSERT INTO reply values(?, ?, br_no.nextval, ?, sysdate)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, reply.getbNo());
+			pstmt.setInt(2, reply.getmNo());
+			pstmt.setString(3, reply.getContent());
+			int result = pstmt.executeUpdate();
+			return result;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (pstmt != null) pstmt.close();
+			if (conn !=null) conn.close();
+		}
+		return 0;
 	}
 }	

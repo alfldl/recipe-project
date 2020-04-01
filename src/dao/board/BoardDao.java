@@ -161,7 +161,7 @@ public class BoardDao {
 		}
 	}
 
-	public int insert(Board board) {
+	public int insert(Board board) throws SQLException {
 		int result = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -177,6 +177,9 @@ public class BoardDao {
 			result = pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
+		} finally {
+			if (pstmt != null) pstmt.close();
+			if (conn != null) conn.close();
 		}
 		return result;
 	}
