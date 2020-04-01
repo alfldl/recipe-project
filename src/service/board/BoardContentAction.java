@@ -20,6 +20,7 @@ public class BoardContentAction implements CommandProcess {
 		try {
 			int bNo = Integer.parseInt(request.getParameter("bNo"));
 			int mNo = Integer.parseInt(request.getParameter("mNo"));
+			System.out.println("mNo="+ mNo);
 			String pageNum = request.getParameter("pageNum");
 			BoardDao boardDao = BoardDao.getInstance();
 			boardDao.hits(bNo);
@@ -29,7 +30,6 @@ public class BoardContentAction implements CommandProcess {
 			int isLike = likeDao.count(bNo, mNo);
 			
 			request.setAttribute("isLike", isLike);
-			System.out.println("isLike="+isLike);
 			request.setAttribute("mNo", mNo);
 			request.setAttribute("bNo", bNo);
 			request.setAttribute("pageNum", pageNum);

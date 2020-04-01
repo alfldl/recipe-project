@@ -100,4 +100,33 @@ public class LikeDao {
 			if (stmt != null) stmt.close();
 		}
 	}
+
+	public int delete(int bNo) throws SQLException{
+		
+		Connection conn = null;
+		Statement stmt = null;
+		String sql ="DELETE FROM likes WHERE b_no=" + bNo;
+		int result = 0;
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			result = stmt.executeUpdate(sql);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (conn != null) conn.close();
+			if (stmt != null) stmt.close();
+		}
+		return result;
+	}
+	
 }
+
+
+
+
+
+
+

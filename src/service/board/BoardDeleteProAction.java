@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.board.BoardDao;
+import dao.board.LikeDao;
 import service.CommandProcess;
 
 public class BoardDeleteProAction implements CommandProcess {
@@ -16,12 +17,20 @@ public class BoardDeleteProAction implements CommandProcess {
 			throws ServletException, IOException {
 		
 		int bNo = Integer.parseInt(request.getParameter("bNo"));
+		int mNo = Integer.parseInt(request.getParameter("mNo"));
 		String pageNum = request.getParameter("pageNum");
-		
+		int result = 0;
 		try {
 			
 			BoardDao boardDao = BoardDao.getInstance();
-			int result = boardDao.delete(bNo);
+			LikeDao likeDao = LikeDao.getInstance();
+			int isLike = likeDao.count(bNo, mNo);
+			
+			if (isLike > 0) {
+				result = likeDao.delete(bNo);
+			}
+			
+			result = boardDao.delete(bNo);
 			
 			request.setAttribute("result", result);
 			request.setAttribute("pageNum", pageNum);

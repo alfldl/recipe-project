@@ -53,13 +53,21 @@ text-decoration: none;
 	</div>
 	<div>
 		<textarea style="resize: none; width: 800px; height: 90px;"></textarea>
-		<button>등록</button>
+		<button onclick="location.href='replyWrite.do?bNo=${board.bNo}&pageNum=${pageNum}&mNo=${board.mNo }'">
+			등록
+		</button>
 	</div>
 		<button onclick="location.href='boardList.do?pageNum=${pageNum}'">
 		목록
 		</button>
 
-
+	<ul>
+		<li>
+		${reply.content } 
+		${reply.writer } 
+		${reply.date } 
+		</li>
+	</ul>
 
 </div> <!--board end  -->
 
