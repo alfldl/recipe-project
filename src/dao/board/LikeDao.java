@@ -43,8 +43,7 @@ public class LikeDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT count(*) FROM likes WHERE b_no=? and m_no=?";
-		System.out.println(bNo);
-		System.out.println(mNo);
+		
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -69,7 +68,7 @@ public class LikeDao {
 		Connection conn = null;
 		Statement stmt = null;
 		String sql = "INSERT INTO likes values(" + bNo +", " + mNo +")";
-		System.out.println(sql);
+		
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
@@ -88,7 +87,6 @@ public class LikeDao {
 		Connection conn = null;
 		Statement stmt = null;
 		String sql = "DELETE FROM likes WHERE b_no=" + bNo + " and m_no=" + mNo;
-		System.out.println(sql);
 		
 		try {
 			conn = getConnection();

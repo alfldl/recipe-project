@@ -28,7 +28,7 @@ public class LikeAction implements CommandProcess {
 			BoardDao boardDao = BoardDao.getInstance();
 			
 			int count = likeDao.count(bNo, mNo);
-			System.out.println(count);
+			
 			if(count == 0) {
 				boardDao.increaseLikes(bNo);
 				likeDao.insert(mNo, bNo);
