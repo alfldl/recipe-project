@@ -32,9 +32,9 @@ public class BoardContentAction implements CommandProcess {
 			int isLike = likeDao.count(bNo, mNo);
 			
 			ReplyDao replyDao = ReplyDao.getInstance();
-			List<Reply> replyList =replyDao.select(bNo);
-			request.setAttribute("", arg1);
-		
+			List<Reply> replyList = replyDao.select(bNo);
+			
+			request.setAttribute("replyList", replyList);
 			request.setAttribute("isLike", isLike);
 			request.setAttribute("mNo", mNo);
 			request.setAttribute("bNo", bNo);

@@ -31,10 +31,10 @@ public class LikeAction implements CommandProcess {
 			
 			if(count == 0) {
 				boardDao.increaseLikes(bNo);
-				likeDao.insert(mNo, bNo);
+				likeDao.insertLike(mNo, bNo);
 			} else {
 				boardDao.decreaseLikes(bNo);
-				likeDao.delete(mNo, bNo);
+				likeDao.deleteLike(mNo, bNo);
 			}
 			
 			

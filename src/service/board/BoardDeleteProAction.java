@@ -27,7 +27,7 @@ public class BoardDeleteProAction implements CommandProcess {
 			int isLike = likeDao.count(bNo, mNo);
 			
 			if (isLike > 0) {
-				result = likeDao.delete(bNo);
+				result = likeDao.deleteAll(bNo);
 			}
 			
 			result = boardDao.delete(bNo);

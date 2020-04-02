@@ -53,13 +53,12 @@ public class ReplyDao {
 		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			
 			while(rs.next()) {
 				Reply reply = new Reply();
 				
 				reply.setbNo(rs.getInt("b_no"));
 				reply.setmNo(rs.getInt("m_no"));
-				reply.setBrNo(rs.getInt("re_no"));
+				reply.setBrNo(rs.getInt("br_no"));
 				reply.setContent(rs.getString("br_content"));
 				reply.setDate(rs.getDate("br_date"));
 				reply.setWriter(rs.getString("m_name"));
@@ -97,4 +96,26 @@ public class ReplyDao {
 		}
 		return 0;
 	}
+
+	public int delete(int brNo) throws SQLException {
+		Connection conn = getConnection();
+		Statement stmt = null;
+		String sql = "DELETE FROM reply WHERE br_no=" + brNo; 
+		int result = 0;
+		try {
+			stmt = conn.createStatement();
+			result = stmt.executeUpdate(sql);
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			if (conn != null) conn.close();
+			if (stmt != null) stmt.close();
+		}
+		return result;
+	}
 }	
+
+

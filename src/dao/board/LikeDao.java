@@ -64,7 +64,7 @@ public class LikeDao {
 		return 0;
 	}
 
-	public void insert(int mNo, int bNo) throws SQLException{
+	public void insertLike(int mNo, int bNo) throws SQLException{
 		Connection conn = null;
 		Statement stmt = null;
 		String sql = "INSERT INTO likes values(" + bNo +", " + mNo +")";
@@ -83,7 +83,7 @@ public class LikeDao {
 				
 	}
 
-	public void delete(int mNo, int bNo) throws SQLException {
+	public void deleteLike(int mNo, int bNo) throws SQLException {
 		Connection conn = null;
 		Statement stmt = null;
 		String sql = "DELETE FROM likes WHERE b_no=" + bNo + " and m_no=" + mNo;
@@ -101,7 +101,7 @@ public class LikeDao {
 		}
 	}
 
-	public int delete(int bNo) throws SQLException{
+	public int deleteAll(int bNo) throws SQLException{
 		
 		Connection conn = null;
 		Statement stmt = null;

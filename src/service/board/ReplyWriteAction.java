@@ -32,7 +32,7 @@ public class ReplyWriteAction implements CommandProcess {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:boardContent.do?pageNum="+ pageNum + "&bNo=" + bNo + "&mNo=1";
+		return "redirect:boardContent.do?pageNum="+ pageNum + "&bNo=" + bNo + "&mNo=3";
 	}
 
 }

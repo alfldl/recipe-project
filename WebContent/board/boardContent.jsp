@@ -61,16 +61,22 @@ text-decoration: none;
 			</button>
 		</form>
 	</div>
-		<button onclick="location.href='boardList.do?pageNum=${pageNum}'">
+		<button onclick="location.href='boardList.do?pageNum=${pageNum }'">
 		목록
 		</button>
 
 	<ul>
+		<c:forEach var="reply" items="${replyList }">
 		<li>
 		${reply.content } 
 		${reply.writer } 
 		${reply.date } 
+		<a href='replyDelete.do?pageNum=${pageNum }&bNo=${bNo }&mNo=${mNo }&brNo=${reply.brNo }' style=float:right >
+		X
+		</a>
 		</li>
+		
+		</c:forEach>
 	</ul>
 
 </div> <!--board end  -->
