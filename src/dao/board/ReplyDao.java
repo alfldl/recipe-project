@@ -116,6 +116,48 @@ public class ReplyDao {
 		}
 		return result;
 	}
+
+	public int countReply(int bNo) {
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "SELECT COUNT(*) FROM reply WHERE b_no=?";
+		int result = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bNo);
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			
+		}
+		return result;
+	}
+
+	public int deleteAllReply(int bNo) throws SQLException {
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "DELETE FROM reply WHERE b_no=?";
+		int result = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bNo);
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (conn != null) conn.close();
+			if (pstmt != null) pstmt.close();
+		}
+		return result;
+	}
 }	
+
+
+
+
+
 
 

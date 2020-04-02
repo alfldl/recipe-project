@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.board.BoardDao;
 import dao.board.LikeDao;
+import dao.board.ReplyDao;
 import service.CommandProcess;
 
 public class BoardDeleteProAction implements CommandProcess {
@@ -24,10 +25,17 @@ public class BoardDeleteProAction implements CommandProcess {
 			
 			BoardDao boardDao = BoardDao.getInstance();
 			LikeDao likeDao = LikeDao.getInstance();
-			int isLike = likeDao.count(bNo, mNo);
+			ReplyDao replyDao = ReplyDao.getInstance();
 			
-			if (isLike > 0) {
-				result = likeDao.deleteAll(bNo);
+			int hasLike = likeDao.countLike(bNo);
+			int hasReply = replyDao.countReply(bNo);
+			
+			if (hasLike > 0) {
+				result = likeDao.deleteAllLike(bNo);
+			}
+			
+			if (hasReply > 0) {
+				result = replyDao.deleteAllReply(bNo); 
 			}
 			
 			result = boardDao.delete(bNo);

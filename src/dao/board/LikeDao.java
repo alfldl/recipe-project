@@ -101,7 +101,7 @@ public class LikeDao {
 		}
 	}
 
-	public int deleteAll(int bNo) throws SQLException{
+	public int deleteAllLike(int bNo) throws SQLException{
 		
 		Connection conn = null;
 		Statement stmt = null;
@@ -119,6 +119,26 @@ public class LikeDao {
 			if (conn != null) conn.close();
 			if (stmt != null) stmt.close();
 		}
+		return result;
+	}
+
+	public int countLike(int bNo) throws SQLException {
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		String sql = "SELECT COUNT(*) FROM likes WHERE b_no=?";
+		int result = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bNo);
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (conn != null) conn.close();
+			if (pstmt != null) pstmt.close();
+		}
+		
 		return result;
 	}
 	
